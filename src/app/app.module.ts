@@ -15,7 +15,8 @@ import { RouterModule } from '@angular/router';
 import { AuthGuard } from './_auth/auth.guard';
 import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
-import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SigninComponent } from './signin/signin.component';
     LoginComponent,
     HeaderComponent,
     ForbiddenComponent,
-    SigninComponent,
+    SignupComponent,
+    EmployeeListComponent,
   ],
   imports: [
     BrowserModule,

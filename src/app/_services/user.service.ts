@@ -36,4 +36,24 @@ export class UserService {
     }
     return isMatch;
   }
+
+  public signup(signupData: any) {
+    return this.httpclient.post(
+      this.PATH_OF_API + '/registerNewUser',
+      signupData,
+      {
+        headers: this.requestHeader,
+      }
+    );
+  }
+  public signupResponseMatch(successResponse: any): boolean {
+    let isMatch = false;
+    const signupResponse: any = this.userAuthService.getSignupResponse();
+    if (signupResponse !== null && successResponse === signupResponse) {
+      isMatch = true;
+      return isMatch;
+    } else {
+      return false;
+    }
+  }
 }

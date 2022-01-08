@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Angular + JWT</a>
+    <a class="navbar-brand" href="#">EMPLOYEE-APP</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -38,6 +38,16 @@
             >User Dashboard</a
           >
         </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/employee-list"
+            *ngIf="userSerice.roleMatch(['Admin'])"
+          >
+            Employee-List
+          </a>
+        </li>
       </ul>
       <button
         *ngIf="!isLoggedIn()"
@@ -60,8 +70,9 @@
         type="button"
         class="btn btn-warning"
         style="margin-left: 5px"
+        routerLink="/signup"
       >
-        SignIn
+        SignUp
       </button>
     </div>
   </div>

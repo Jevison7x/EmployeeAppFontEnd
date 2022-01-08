@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class UserAuthService {
   localSetRoles!: string | null;
   localSetToken!: string | null;
+  localgetSinupResponse!: string | null;
   constructor() {}
 
   public setRoles(roles: []) {
@@ -43,5 +44,22 @@ export class UserAuthService {
 
   public isLoggedIn() {
     return this.getRoles() && this.getToken();
+  }
+  public setSignupResponse(signupResponse: string) {
+    localStorage.setItem('signupResponse', signupResponse);
+  }
+  public getSignupResponse() {
+    this.localgetSinupResponse = localStorage.getItem('signupResponse');
+    if (this.localgetSinupResponse !== null) {
+      // item not null code
+      return this.localgetSinupResponse;
+    } else {
+      // item is null code
+      return null;
+    }
+  }
+
+  public isSignUpResponse() {
+    return this.getSignupResponse;
   }
 }

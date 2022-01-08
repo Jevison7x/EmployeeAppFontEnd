@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <h1 class="text-center" style="color: #0d6efd">SignUp Form</h1>
+  <div class="card" style="padding: 20px">
+    <div class="text-center" *ngIf="isSignUpResponse()">
+      <h4 style="color: #157347; font-size: 1.2rem !important">
+        Signup to create your Employee-App account
+      </h4>
+    </div>
+    <div *ngIf="!isSignUpResponse()">
+      <span>
+        <h4>Your account was creat successfully..</h4>
+        <a routerLink="/login" style="outline: none">login now</a>
+      </span>
+    </div>
+    <form #signupForm="ngForm" (ngSubmit)="login(signupForm)">
+      <input
+        type="text"
+        ngModel
+        name="userFirstName"
+        id="userFirstName"
+        placeholder="Enter your firstname"
+        class="form-control mb-3"
+      />
+      <input
+        type="text"
+        ngModel
+        name="userLastName"
+        id="userLastName"
+        placeholder="Enter your lastname"
+        class="form-control mb-3"
+      />
+      <input
+        type="text"
+        ngModel
+        name="userName"
+        id="userName"
+        placeholder="Enter your username"
+        class="form-control mb-3"
+      />
+      <input
+        type="password"
+        ngModel
+        name="userPassword"
+        id="userPassword"
+        placeholder="Enter your password"
+        class="form-control mb-3"
+      />
+      <input
+        type="submit"
+        value="SignUp"
+        class="btn btn-outline-primary form-control rounded-0"
+      />
+    </form>
+  </div>
+</div>
