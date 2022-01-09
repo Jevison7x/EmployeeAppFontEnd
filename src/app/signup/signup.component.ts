@@ -24,6 +24,7 @@ export class SignupComponent implements OnInit {
         console.log(response[0]);
 
         this.userAuthenService.setSignupResponse(response[0]);
+        this.router.navigate(['/login']);
         //this.userAuthenService.setToken(response.jwtToken);
         // this.userAuthenService.setRoles(response.user.role);
         /*

@@ -17,6 +17,8 @@ import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
 import { SignupComponent } from './signup/signup.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { FooterComponent } from './footer/footer.component';
+import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     ForbiddenComponent,
     SignupComponent,
     EmployeeListComponent,
+    FooterComponent,
+    CreateEmployeeComponent,
   ],
   imports: [
     BrowserModule,
