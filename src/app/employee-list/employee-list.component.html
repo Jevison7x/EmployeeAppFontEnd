@@ -1,5 +1,25 @@
 <div class="container mt-5">
   <h2>Employee List</h2>
+  <div style="display: flex; float: right; margin-top: -38px">
+    <button class="btn btn-primary" style="font-weight: bold">
+      Sort By firstname
+    </button>
+    <button
+      class="btn btn-success"
+      style="margin-right: 6px; margin-left: 6px; font-weight: bold"
+    >
+      Sort By Salary
+    </button>
+    <button
+      class="btn btn-secondary"
+      style="margin-right: 6px; font-weight: bold"
+    >
+      Sort By Age
+    </button>
+    <button class="btn btn-warning" style="font-weight: bold">
+      Sort By Salary
+    </button>
+  </div>
   <hr style="margin-bottom: -38px" />
   <table class="table table-striped mt-5">
     <thead>
@@ -20,9 +40,16 @@
         <td>
           <button
             (click)="updateEmployee(employee.employeeId)"
-            class="btn btn-info"
+            class="btn btn-danger"
           >
             Update
+          </button>
+          <button
+            (click)="deleteEmployee(employee.employeeId)"
+            class="btn btn-info"
+            style="margin-left: 10px"
+          >
+            Delete
           </button>
         </td>
       </tr>

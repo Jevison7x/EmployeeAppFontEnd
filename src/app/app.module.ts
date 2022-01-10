@@ -20,6 +20,7 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
     FooterComponent,
     CreateEmployeeComponent,
     UpdateEmployeeComponent,
+    EmployeeDetailsComponent,
   ],
   imports: [
     BrowserModule,

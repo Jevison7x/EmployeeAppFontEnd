@@ -46,4 +46,14 @@ export class EmployeeService {
       }
     );
   }
+
+  deleteEmployee(employeeId: string): Observable<Object> {
+    return this.httpclient.delete(
+      this.PATH_OF_API + '/' + employeeId,
+
+      {
+        headers: this.requestHeader,
+      }
+    );
+  }
 }
