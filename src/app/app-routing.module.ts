@@ -7,6 +7,7 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'employee-list', component: EmployeeListComponent },
   { path: 'create-employee', component: CreateEmployeeComponent },
+  { path: 'update-employee/:employeeId', component: UpdateEmployeeComponent },
 ];
 
 @NgModule({

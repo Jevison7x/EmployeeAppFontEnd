@@ -19,6 +19,7 @@ import { SignupComponent } from './signup/signup.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
     EmployeeListComponent,
     FooterComponent,
     CreateEmployeeComponent,
+    UpdateEmployeeComponent,
   ],
   imports: [
     BrowserModule,

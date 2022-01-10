@@ -1,0 +1,52 @@
+<div class="container col-md-6 offset-md-3 mt-5 card">
+  <h3 style="color: #0d6efd; margin-bottom: -5px">Update Employee</h3>
+  <hr />
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group mb-2">
+      <label style="font-weight: bold">First Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        placeholder="Enter your firstName"
+        [(ngModel)]="employee.firstName"
+        name="firstName"
+      />
+    </div>
+    <div class="form-group mb-2">
+      <label style="font-weight: bold">lastName:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        placeholder="Enter your lastName"
+        [(ngModel)]="employee.lastName"
+        name="lastName"
+      />
+    </div>
+
+    <div class="form-group mb-2">
+      <label style="font-weight: bold">Age:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="age"
+        [(ngModel)]="employee.age"
+        name="age"
+      />
+    </div>
+
+    <div class="form-group">
+      <label style="font-weight: bold">Salary:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="salary"
+        [(ngModel)]="employee.salary"
+        name="salary"
+      />
+    </div>
+
+    <button class="btn btn-primary mt-3 mb-2">Submit</button>
+  </form>
+</div>
