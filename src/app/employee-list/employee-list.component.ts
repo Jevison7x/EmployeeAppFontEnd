@@ -10,6 +10,7 @@ import { EmployeeService } from '../_services/employee.service';
 })
 export class EmployeeListComponent implements OnInit {
   employees: Employee[] = [];
+  firstName: any;
 
   constructor(
     private employeeService: EmployeeService,
@@ -58,6 +59,19 @@ export class EmployeeListComponent implements OnInit {
         console.log(response);
         this.getEmployees();
         // this.employees = response;
+      },
+
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  sortEmployees() {
+    return this.employeeService.getSortedEmployeesList().subscribe(
+      (response) => {
+        console.log(response);
+        this.employees = response;
       },
 
       (error) => {

@@ -1,22 +1,32 @@
 <div class="container mt-5">
   <h2>Employee List</h2>
   <div style="display: flex; float: right; margin-top: -38px">
-    <button class="btn btn-primary" style="font-weight: bold">
+    <button
+      class="btn btn-primary"
+      style="font-weight: bold"
+      (click)="sortEmployees()"
+    >
       Sort By firstname
     </button>
     <button
       class="btn btn-success"
       style="margin-right: 6px; margin-left: 6px; font-weight: bold"
+      (click)="sortEmployees()"
     >
       Sort By Salary
     </button>
     <button
       class="btn btn-secondary"
       style="margin-right: 6px; font-weight: bold"
+      (click)="sortEmployees()"
     >
       Sort By Age
     </button>
-    <button class="btn btn-warning" style="font-weight: bold">
+    <button
+      class="btn btn-warning"
+      style="font-weight: bold"
+      (click)="sortEmployees()"
+    >
       Sort By Salary
     </button>
   </div>

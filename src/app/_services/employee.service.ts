@@ -56,4 +56,10 @@ export class EmployeeService {
       }
     );
   }
+
+  public getSortedEmployeesList(): Observable<Employee[]> {
+    return this.httpclient.get<Employee[]>(this.PATH_OF_API + '/sortEmplyees', {
+      headers: this.requestHeader,
+    });
+  }
 }
