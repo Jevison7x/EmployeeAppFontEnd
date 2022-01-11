@@ -9,13 +9,6 @@ import { Employee } from '../employee';
 export class EmployeeService {
   PATH_OF_API = 'http://localhost:8080/EmployeeApp';
 
-  employeePostData = {
-    firstName: 'firstName',
-    lastName: 'lastName',
-    age: 'age',
-    salary: 'salary',
-  };
-  sty = this.employeePostData.firstName;
   employee: Employee = new Employee();
   constructor(private httpclient: HttpClient) {}
 
@@ -47,10 +40,13 @@ export class EmployeeService {
     return this.httpclient.delete(this.PATH_OF_API + '/' + employeeId);
   }
 
-  public getSortedEmployeesList(): Observable<any> {
-    return this.httpclient.post(
+  public getSortedEmployeesList(sortValue: string): Observable<Employee[]> {
+    var sortType = {
+      sortBy: sortValue
+    };
+    return this.httpclient.post<Employee[]>(
       this.PATH_OF_API + '/sort-employees',
-      this.employeePostData
+      JSON.stringify(sortType)
     );
   }
 }
