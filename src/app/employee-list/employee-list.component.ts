@@ -41,7 +41,6 @@ export class EmployeeListComponent implements OnInit {
       (response) => {
         console.log(response);
         this.getEmployees();
-        // this.employees = response;
       },
 
       (error) => {
