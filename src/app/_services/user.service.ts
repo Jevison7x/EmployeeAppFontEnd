@@ -39,7 +39,7 @@ export class UserService {
 
   public signup(signupData: any) {
     return this.httpclient.post(
-      this.PATH_OF_API + '/registerNewUser',
+      this.PATH_OF_API + '/register-new-user',
       signupData,
       {
         headers: this.requestHeader,

@@ -10,18 +10,49 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { UserComponent } from './user/user.component';
+import { AuthGuard } from './_auth/auth.guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'user', component: UserComponent },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['Admin'] },
+  },
+  {
+    path: 'user',
+    component: UserComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['User'] },
+  },
   { path: 'login', component: LoginComponent },
   { path: 'forbidden', component: ForbiddenComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'employee-list', component: EmployeeListComponent },
-  { path: 'create-employee', component: CreateEmployeeComponent },
-  { path: 'update-employee/:employeeId', component: UpdateEmployeeComponent },
-  { path: 'employee-details/:employeeId', component: EmployeeDetailsComponent },
+  {
+    path: 'employee-list',
+    component: EmployeeListComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['Admin'] },
+  },
+  {
+    path: 'create-employee',
+    component: CreateEmployeeComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['Admin'] },
+  },
+  {
+    path: 'update-employee/:employeeId',
+    component: UpdateEmployeeComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['Admin'] },
+  },
+  {
+    path: 'employee-details/:employeeId',
+    component: EmployeeDetailsComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['Admin'] },
+  },
 ];
 
 @NgModule({

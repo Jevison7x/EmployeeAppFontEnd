@@ -10,7 +10,6 @@ import { EmployeeService } from '../_services/employee.service';
 })
 export class EmployeeListComponent implements OnInit {
   employees: Employee[] = [];
-  firstName: any;
 
   constructor(
     private employeeService: EmployeeService,
@@ -19,22 +18,6 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEmployees();
-    /*
-      {
-        employeeId: '1fe',
-        firstName: 'sam',
-        lastName: 'tim',
-        age: 12,
-        salary: 2344,
-      },
-      {
-        employeeId: 'koko',
-        firstName: 'asian',
-        lastName: 'inem',
-        age: 9,
-        salary: 234,
-      },
-      */
   }
 
   private getEmployees() {

@@ -8,58 +8,37 @@ import { Employee } from '../employee';
 })
 export class EmployeeService {
   PATH_OF_API = 'http://localhost:8080/EmployeeApp';
-  GET_PATH_OF_API = 'http://localhost:8080/EmployeeApp/getEmployees/';
-  requestHeader = new HttpHeaders({ 'No-Auth': 'True' });
   constructor(private httpclient: HttpClient) {}
 
   public getEmployeesList(): Observable<Employee[]> {
     return this.httpclient.get<Employee[]>(
-      this.PATH_OF_API + '/getAllEmployee',
-      {
-        headers: this.requestHeader,
-      }
+      this.PATH_OF_API + '/get-all-employee'
     );
   }
 
   createEmployee(employee: Employee): Observable<Object> {
     return this.httpclient.post(
-      this.PATH_OF_API + '/createNewEmployee',
-      employee,
-      {
-        headers: this.requestHeader,
-      }
+      this.PATH_OF_API + '/create-new-employee',
+      employee
     );
   }
 
   getEmployeeById(employeeId: string): Observable<Employee> {
-    return this.httpclient.get<Employee>(this.PATH_OF_API + '/' + employeeId, {
-      headers: this.requestHeader,
-    });
+    return this.httpclient.get<Employee>(this.PATH_OF_API + '/' + employeeId);
   }
 
   updateEmployee(employeeId: string, employee: Employee): Observable<Object> {
     return this.httpclient.put<Employee>(
       this.PATH_OF_API + '/' + employeeId,
-      employee,
-      {
-        headers: this.requestHeader,
-      }
+      employee
     );
   }
 
   deleteEmployee(employeeId: string): Observable<Object> {
-    return this.httpclient.delete(
-      this.PATH_OF_API + '/' + employeeId,
-
-      {
-        headers: this.requestHeader,
-      }
-    );
+    return this.httpclient.delete(this.PATH_OF_API + '/' + employeeId);
   }
 
-  public getSortedEmployeesList(): Observable<Employee[]> {
-    return this.httpclient.get<Employee[]>(this.PATH_OF_API + '/sortEmplyees', {
-      headers: this.requestHeader,
-    });
+  public getSortedEmployeesList(): Observable<any> {
+    return this.httpclient.get<Employee>(this.PATH_OF_API + '/sort-emplyees');
   }
 }

@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  login(signupForm: NgForm) {
+  signup(signupForm: NgForm) {
     this.userService.signup(signupForm.value).subscribe(
       (response: any) => {
         console.log(response[0]);
