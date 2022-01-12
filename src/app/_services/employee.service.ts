@@ -15,6 +15,7 @@ export class EmployeeService {
     age: 'age',
     salary: 'salary',
   };
+  sty = this.employeePostData.firstName;
   employee: Employee = new Employee();
   constructor(private httpclient: HttpClient) {}
 
@@ -46,9 +47,10 @@ export class EmployeeService {
     return this.httpclient.delete(this.PATH_OF_API + '/' + employeeId);
   }
 
-  public getSortedEmployeesList(): Observable<Employee[]> {
-    return this.httpclient.get<Employee[]>(
-      this.PATH_OF_API + '/sort-employees'
+  public getSortedEmployeesList(): Observable<any> {
+    return this.httpclient.post(
+      this.PATH_OF_API + '/sort-employees',
+      this.employeePostData
     );
   }
 }

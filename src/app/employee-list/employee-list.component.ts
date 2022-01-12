@@ -10,6 +10,12 @@ import { EmployeeService } from '../_services/employee.service';
 })
 export class EmployeeListComponent implements OnInit {
   employees: Employee[] = [];
+  employeePostData = {
+    firstName: 'firstName',
+    lastName: 'lastName',
+    age: 'age',
+    salary: 'salary',
+  };
 
   constructor(
     private employeeService: EmployeeService,
@@ -49,7 +55,7 @@ export class EmployeeListComponent implements OnInit {
     );
   }
 
-  sortEmployees() {
+  sortEmployees(sortby: string) {
     return this.employeeService.getSortedEmployeesList().subscribe(
       (response) => {
         console.log(response);
